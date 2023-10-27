@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length & Distance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Length and Distance</h1>
+    <div class="main" id="m1">
+        <button id="cmToMetersBtn" onclick="cm()">Centimeters to meters</button>
+        <button id="inchesToFeetBtn" onclick="into()">Inches to feet</button>
+        <a href="index.html"><button class="hmBtn">Home</button></a>
+    </div>
+    <div id="form" style="display: none;">
+        <input type="text" name="" id="inp" placeholder="type value">
+        <button onclick="cmtom()" id="cmbtn">Convert</button>
+        <button onclick="inctofeet()" id="inchbtn">Convert</button>
+        <h1 id="value"></h1>
+    </div>
+    <script>
+        function cm(){
+            let form = document.getElementById("form");
+            let m = document.getElementById("m1");
+            let btn = document.getElementById("inchbtn");
+            btn.style.display = "none";
+            m.style.display = "none";
+            form.style.display = "block";
+            
+        }
+        function cmtom(){
+            let input = document.getElementById("inp").value;
+            let value = input/100;
+            document.getElementById("value").innerText = `${value} Meters` ;
+            
+        }
+        function into(){
+            let form = document.getElementById("form");
+            let m = document.getElementById("m1");
+            let btn = document.getElementById("cmbtn");
+            btn.style.display = "none";
+            m.style.display = "none";
+            form.style.display = "block";
+        }
+        function inctofeet(){
+            let input = document.getElementById("inp").value;
+            let value = input/12;
+            document.getElementById("value").innerText = `${value} Feet` ;
+        }
+    </script>
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Temperature</h1>
+    <div class="main" id="m1">
+        <button onclick="celsius()">Celsius to Fahrenheit</button>
+        <button onclick="fahren()">Fahrenheit to Celsius</button>
+        <a href="index.html"><button class="hmBtn">Home</button></a>
+    </div>
+    <div id="form" style="display: none;">
+        <input type="text" name="" id="inp" placeholder="type value">
+        <button onclick="ctof()" id="clbtn">Convert</button>
+        <button onclick="ftoc()" id="frbtn">Convert</button>
+        <h1 id="value"></h1>
+    </div>
+    <script>
+        function celsius(){
+            let form = document.getElementById("form");
+            let m = document.getElementById("m1");
+            let btn = document.getElementById("frbtn");
+            btn.style.display = "none";
+            m.style.display = "none";
+            form.style.display = "block";
+            
+        }
+        function ctof(){
+            let input = document.getElementById("inp").value;
+            let value = (input*(9/5))+32;
+            document.getElementById("value").innerText = `${value} Fahrenheit` ;
+            
+        }
+        function fahren(){
+            let form = document.getElementById("form");
+            let m = document.getElementById("m1");
+            let btn = document.getElementById("clbtn");
+            btn.style.display = "none";
+            m.style.display = "none";
+            form.style.display = "block";
+        }
+        function ftoc(){
+            let input = document.getElementById("inp").value;
+            let value = (input-32)*(5/9);
+            document.getElementById("value").innerText = `${value} Celsius` ;
+        }
+    </script>
+    
+</body>
+</html>
